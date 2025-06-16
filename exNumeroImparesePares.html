@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Números Impares e Pares</h1>
+
+    <input type="number" name="Numero" id="numero">
+    <button onclick="validar()">Validar</button><br>
+
+
+    <h2>Números Pares</h2>
+    <div id="Par"></div>
+
+    <h2>Números Impares</h2>
+    <div id="Impar"></div>
+
+
+
+    <script>
+
+        //Criar a lista de números
+        const listaNumeros = [];
+        
+        //Mapear as div
+        const divPar =document.getElementById('Par')
+        const divImpar =document.getElementById('Impar')
+
+        function validar () {
+
+            //Mapear o input do número a ser testado
+            const numero = Number(document.getElementById('numero').value);
+
+            //Adicionar o número obtido do imput na lista 
+            listaNumeros.push(numero);
+
+            //Limpar as divi para receber os novos valores
+            divImpar.innerHTML = '';
+            divPar.innerHTML = '';
+
+
+            //Percorrer a lista e atribuir os números para a sua div correspondente 
+
+            listaNumeros.forEach(numero => {
+                if (numero %2 == 0) {
+                    divPar.innerHTML += `${numero} -`;
+                }else {
+                    divImpar.innerHTML += `${numero} -`;
+                }
+            });
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
